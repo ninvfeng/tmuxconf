@@ -8,8 +8,25 @@ REPO=${TMUXCONF_REPO:-https://github.com/ninvfeng/tmuxconf}
 TPM_REPO=${TPM_REPO:-https://github.com/tmux-plugins/tpm}
 DIR=${TMUXCONF_DIR:-$HOME/.tmuxconf}
 
-command -v tmux >/dev/null || { echo "请先安装 tmux (>= 3.2)"; exit 1; }
-command -v git >/dev/null || { echo "请先安装 git"; exit 1; }
+# 缺 tmux / git 就用系统包管理器装上
+pkg_install() {
+    local sudo=; [ "$(id -u)" = 0 ] || sudo=sudo
+    if command -v brew >/dev/null; then brew install "$@"
+    elif command -v apt-get >/dev/null; then $sudo apt-get update -qq && $sudo apt-get install -y "$@"
+    elif command -v dnf >/dev/null; then $sudo dnf install -y "$@"
+    elif command -v yum >/dev/null; then $sudo yum install -y "$@"
+    elif command -v pacman >/dev/null; then $sudo pacman -S --noconfirm "$@"
+    elif command -v apk >/dev/null; then $sudo apk add "$@"
+    else echo "没找到包管理器,请手动安装:$*"; exit 1
+    fi
+}
+missing=
+for c in tmux git; do command -v $c >/dev/null || missing="$missing $c"; done
+[ -z "$missing" ] || { echo "安装$missing ..."; pkg_install $missing; }
+
+# 老发行版仓库里的 tmux 可能低于 3.2,部分功能不可用,提醒一下但不拦
+ver=$(tmux -V | grep -oE '[0-9]+\.[0-9]+' | head -1)
+awk "BEGIN{exit !($ver < 3.2)}" && echo "⚠ 当前 tmux $ver 低于 3.2,部分功能不可用,建议升级"
 
 # 从仓库里执行就用仓库本身,curl | bash 时才去 clone
 SRC=$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" 2>/dev/null && pwd || true)

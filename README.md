@@ -22,7 +22,7 @@ https://github.com/user-attachments/assets/283ae488-130a-4800-b0ff-87d0a851f5dc
 帮我安装应用这个tmux配置 https://github.com/ninvfeng/tmuxconf
 ```
 
-或者自己动手，需要 tmux ≥ 3.2 和 git：
+或者自己动手（没装 tmux / git 会自动装上，tmux 需 ≥ 3.2）：
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/ninvfeng/tmuxconf/main/install.sh | bash
