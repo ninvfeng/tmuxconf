@@ -14,7 +14,13 @@
 
 ## 安装
 
-需要 tmux ≥ 3.2 和 git。
+把这句话发给 Claude Code / Codex 等 AI 助手：
+
+```
+帮我安装应用这个tmux配置 https://github.com/ninvfeng/tmuxconf
+```
+
+或者自己动手，需要 tmux ≥ 3.2 和 git：
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/ninvfeng/tmuxconf/main/install.sh | bash
@@ -24,12 +30,6 @@ curl -fsSL https://raw.githubusercontent.com/ninvfeng/tmuxconf/main/install.sh |
 
 ```bash
 git clone https://github.com/ninvfeng/tmuxconf ~/.tmuxconf && ~/.tmuxconf/install.sh
-```
-
-或者直接把这句话发给 Claude Code / Codex 等 AI 助手：
-
-```
-帮我安装应用这个tmux配置 https://github.com/ninvfeng/tmuxconf
 ```
 
 安装脚本会：
