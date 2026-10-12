@@ -10,9 +10,7 @@
 - **环境不丢**：关掉 VS Code、断网、换电脑，Agent 照样跑；开发机重启后自动恢复窗口布局并重新拉起 Agent
 - **Agent 友好**：Shift+Enter 能正常换行，ESC 没有延迟，支持真彩色
 
-```
- +   shop-api  1 claude   2 codex   3 pi   4 node        ↓46 KB/s ↑49 KB/s CPU:7.2% RAM:27.5%  10-12 10:51:50  x
-```
+![tmuxconf](docs/hero.png)
 
 ## 安装
 
@@ -62,6 +60,8 @@ cd ~/code/shop-api
 ta            # 进入 shop-api 会话，没有就新建
 ta demo       # 指定会话名
 ```
+
+![点会话名切换项目](docs/sessions.png)
 
 - 会话名取当前目录名，`.` 和 `:` 会换成 `_`（`www.foo.com` 变成 `www_foo_com`）
 - 已经在 tmux 里也能用，会直接切到目标会话
