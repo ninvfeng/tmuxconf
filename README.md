@@ -32,7 +32,7 @@ curl -fsSL https://raw.githubusercontent.com/ninvfeng/tmuxconf/main/install.sh |
 git clone https://github.com/ninvfeng/tmuxconf ~/.tmuxconf && ~/.tmuxconf/install.sh
 ```
 
-> 💡 tmux 暂不支持 Windows。Windows 用户可以考虑用 WSL2 或者虚拟机装一个 Linux 作为开发环境，再用 VS Code Remote-SSH 连进去使用。
+> 💡 tmux 暂不支持 Windows。Windows 用户可以考虑用 WSL2 或者虚拟机装一个 Linux 作为开发环境，再用 VS Code 远程连进去使用。
 
 安装脚本会：
 
