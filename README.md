@@ -10,9 +10,7 @@
 - **环境不丢**：关掉 VS Code、断网、换电脑，Agent 照样跑；开发机重启后自动恢复窗口布局并重新拉起 Agent
 - **Agent 友好**：Shift+Enter 能正常换行，ESC 没有延迟，支持真彩色
 
-[![▶ 70 秒看懂 tmuxconf](docs/promo-cover.jpg)](https://cdn.jsdelivr.net/gh/ninvfeng/tmuxconf@main/docs/promo.mp4)
-
-▶ 点上图播放宣传视频（70 秒，有配音）
+https://github.com/user-attachments/assets/283ae488-130a-4800-b0ff-87d0a851f5dc
 
 ![tmuxconf](docs/hero.png)
 
