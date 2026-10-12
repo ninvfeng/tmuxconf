@@ -26,6 +26,12 @@ curl -fsSL https://raw.githubusercontent.com/ninvfeng/tmuxconf/main/install.sh |
 git clone https://github.com/ninvfeng/tmuxconf ~/.tmuxconf && ~/.tmuxconf/install.sh
 ```
 
+或者直接把这句话发给 Claude Code / Codex 等 AI 助手：
+
+```
+帮我安装应用这个tmux配置 https://github.com/ninvfeng/tmuxconf
+```
+
 安装脚本会：
 
 1. 把原有的 `~/.tmux.conf` 备份为 `~/.tmux.conf.bak.<时间戳>`，再软链到本仓库的 `tmux.conf`
