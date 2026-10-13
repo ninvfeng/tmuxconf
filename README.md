@@ -40,6 +40,12 @@ git clone https://github.com/ninvfeng/tmuxconf ~/.tmuxconf && ~/.tmuxconf/instal
 
 > 💡 tmux 暂不支持 Windows。Windows 用户可以考虑用 WSL2 或者虚拟机装一个 Linux 作为开发环境，再用 VS Code 远程连进去使用。
 
+> 🍎 macOS 也能直接装（会用 Homebrew 装 tmux），几点差异：
+> - 状态栏不显示网速（插件只支持 Linux），CPU / 内存正常
+> - 复制会同时写入 `pbcopy`，Terminal.app 也能用
+> - 触控板没有中键，可以用**右键**点窗格 / 窗口标签，从 tmux 自带的菜单里分屏、关闭
+> - `Alt` 快捷键要先在终端里把 Option 设为 Meta（iTerm2：Profiles → Keys → Left Option key 选 `Esc+`；Terminal.app：描述文件 → 键盘 → 勾选"将 Option 键用作 Meta 键"）
+
 安装脚本会：
 
 1. 把原有的 `~/.tmux.conf` 备份为 `~/.tmux.conf.bak.<时间戳>`，再软链到本仓库的 `tmux.conf`

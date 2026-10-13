@@ -53,10 +53,24 @@ export TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/plugins/
 
 # ta 命令写入 shell 配置,已写过则跳过
 line="[ -f \"$DIR/ta.sh\" ] && . \"$DIR/ta.sh\"  # tmuxconf"
-for rc in ~/.zshrc ~/.bashrc; do
+rcs="$HOME/.zshrc $HOME/.bashrc"
+# macOS 终端开的 bash 是登录 shell,只读 .bash_profile
+[ "$(uname)" = Darwin ] && rcs="$rcs $HOME/.bash_profile"
+found=
+for rc in $rcs; do
     [ -f "$rc" ] || continue
+    found=1
     grep -q '# tmuxconf$' "$rc" || { echo "$line" >> "$rc"; echo "已写入 ta 命令 -> $rc"; }
 done
+# 新机器(尤其新 Mac)可能一个 rc 都没有,按当前 shell 建一个
+if [ -z "$found" ]; then
+    case "$SHELL" in
+        *zsh) rc=~/.zshrc ;;
+        *) [ "$(uname)" = Darwin ] && rc=~/.bash_profile || rc=~/.bashrc ;;
+    esac
+    echo "$line" >> "$rc"
+    echo "已写入 ta 命令 -> $rc"
+fi
 
 # 正在运行的 tmux 直接生效
 tmux source-file ~/.tmux.conf 2>/dev/null || true

@@ -8,7 +8,7 @@ if [ -L ~/.tmux.conf ]; then
     [ -n "$bak" ] && mv "$bak" ~/.tmux.conf && echo "已恢复 $bak"
 fi
 
-for rc in ~/.zshrc ~/.bashrc; do
+for rc in ~/.zshrc ~/.bashrc ~/.bash_profile; do
     [ -f "$rc" ] && sed -i.tmuxconf-bak '/# tmuxconf$/d' "$rc" && rm -f "$rc.tmuxconf-bak"
 done
 
