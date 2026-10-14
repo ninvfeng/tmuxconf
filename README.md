@@ -129,7 +129,7 @@ set -g @resurrect-processes 'ssh vim nvim pi claude codex "~node" htop'
 - [tmux-plugins/tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect)
 - [tmux-plugins/tmux-continuum](https://github.com/tmux-plugins/tmux-continuum)
 
-## 友情链接
+## Community
 
 - [LINUX DO](https://linux.do) - 新的理想型社区
 
