@@ -131,7 +131,8 @@ set -g @resurrect-processes 'ssh vim nvim pi claude codex "~node" htop'
 
 ## Community
 
-- [LINUX DO](https://linux.do) - 新的理想型社区
+- [LINUX DO](https://linux.do/t/topic/3022774)
+- [V2EX](https://www.v2ex.com/t/1248921)
 
 ## License
 
